@@ -4,186 +4,557 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Seth Saler — Legal engineer & micro-tools</title>
-    <meta
-      name="description"
-      content="Senior Legal Engineer. Small utilities for documents, data, browsers, and automation."
-    />
+    <meta name="description" content="Senior Legal Engineer. Micro-tools for documents, data wrangling, browsers, and automation. Orlando, FL." />
+    <meta name="author" content="Seth Saler" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Seth Saler — Legal engineer & micro-tools" />
+    <meta property="og:description" content="Portfolio of micro-tools: CLI utilities, desktop helpers, browser extensions, and automation that do one job clearly." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sethsaler.github.io/resume/" />
+    <meta property="og:image" content="https://repository-images.githubusercontent.com/0/0/0" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Seth Saler — Legal engineer & micro-tools" />
+    <meta name="twitter:description" content="Micro-tools for documents, data, browsers, and automation." />
+
+    <!-- Favicon (inline SVG as data URI) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c4a6e'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'%3ES%3C/text%3E%3C/svg%3E" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
     <style>
+      /* ── Tokens ── */
       :root {
         --bg: #f7f4ef;
         --fg: #1c1917;
         --muted: #57534e;
         --accent: #0c4a6e;
+        --accent-hover: #0a3a57;
+        --accent-light: #7dd3fc;
         --border: #d6d3d1;
         --card: #fffefb;
+        --tag-bg: #e7e5e4;
+        --tag-fg: #44403c;
+        --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+        --shadow-hover: 0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #12100e;
+          --bg: #111110;
           --fg: #f5f5f4;
           --muted: #a8a29e;
           --accent: #7dd3fc;
+          --accent-hover: #a0d8ff;
+          --accent-light: #7dd3fc;
           --border: #292524;
           --card: #1c1917;
+          --tag-bg: #292524;
+          --tag-fg: #d6d3d1;
+          --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+          --shadow-hover: 0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.25);
         }
       }
-      * {
-        box-sizing: border-box;
-      }
+
+      /* ── Reset & base ── */
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+        font-family: 'Newsreader', Georgia, 'Times New Roman', Times, serif;
         background: var(--bg);
         color: var(--fg);
-        line-height: 1.65;
+        line-height: 1.75;
         font-size: 1.05rem;
-      }
-      .wrap {
-        max-width: 44rem;
-        margin: 0 auto;
-        padding: 2.5rem 1.35rem 4rem;
-      }
-      header {
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 1.5rem;
-        margin-bottom: 2rem;
-      }
-      h1 {
-        font-size: 1.85rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        margin: 0 0 0.35rem;
-      }
-      .lede {
-        font-size: 1.1rem;
-        color: var(--muted);
-        margin: 0;
-      }
-      h2 {
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin: 2.25rem 0 0.75rem;
-      }
-      p {
-        margin: 0 0 1rem;
-      }
-      ul {
-        margin: 0 0 1rem;
-        padding-left: 1.2rem;
-      }
-      li {
-        margin-bottom: 0.35rem;
+        -webkit-font-smoothing: antialiased;
       }
       a {
         color: var(--accent);
         text-decoration-thickness: 1px;
         text-underline-offset: 3px;
+        transition: color 0.15s;
       }
-      a:hover {
-        text-decoration-thickness: 2px;
+      a:hover { color: var(--accent-hover); }
+
+      /* ── Layout ── */
+      .wrap {
+        max-width: 50rem;
+        margin: 0 auto;
+        padding: 3.5rem 1.75rem 6rem;
       }
-      .cards {
+
+      /* ── Header ── */
+      header { margin-bottom: 2.5rem; }
+      .name {
+        font-family: 'Newsreader', serif;
+        font-size: 2.6rem;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin: 0 0 0.3rem;
+        color: var(--fg);
+      }
+      .tagline {
+        font-size: 1.05rem;
+        color: var(--muted);
+        margin: 0;
+        font-style: italic;
+      }
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.2rem;
+        margin-top: 0.75rem;
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .meta-row a { color: var(--accent); }
+      .meta-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        background: var(--tag-bg);
+        color: var(--tag-fg);
+        border-radius: 20px;
+        padding: 0.15rem 0.65rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      .intro {
+        font-size: 1.03rem;
+        color: var(--muted);
+        max-width: 44rem;
+        border-left: 3px solid var(--accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0 0;
+        line-height: 1.7;
+      }
+      .intro strong { color: var(--fg); font-weight: 600; }
+
+      /* ── Section headings ── */
+      h2 {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 2.75rem 0 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      h2::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+      h2:first-of-type { margin-top: 2rem; }
+
+      /* ── Tools grid ── */
+      .tools-grid {
         display: grid;
-        gap: 0.65rem;
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        gap: 0.6rem;
+        margin-top: 0.1rem;
       }
-      .card {
+      .tool-chip {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 10px;
-        padding: 0.85rem 1rem;
+        padding: 0.55rem 0.8rem;
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 0.84rem;
+        font-weight: 500;
+        color: var(--fg);
+        text-decoration: none;
+        box-shadow: var(--shadow);
+        transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
       }
-      .card strong {
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      .tool-chip:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-1px);
+        color: var(--accent);
+      }
+      .tool-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+      }
+      .tools-caption {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-top: 0.6rem;
+        font-style: italic;
+      }
+
+      /* ── Theme pills ── */
+      .themes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.1rem;
+      }
+      .theme-pill {
+        background: var(--tag-bg);
+        color: var(--tag-fg);
+        border-radius: 8px;
+        padding: 0.3rem 0.85rem;
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 0.84rem;
+        font-weight: 500;
+        border: 1px solid transparent;
+        transition: border-color 0.15s;
+      }
+      .theme-pill:hover { border-color: var(--accent); }
+      .theme-pill strong { font-weight: 600; color: var(--accent); }
+
+      /* ── Projects ── */
+      .projects {
+        display: grid;
+        gap: 0.65rem;
+        margin-top: 0.1rem;
+      }
+      .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 0.9rem 1.15rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.25rem 1.25rem;
+        align-items: start;
+        box-shadow: var(--shadow);
+        transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+      }
+      .project-card:hover {
+        border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-1px);
+      }
+      .project-name {
+        font-family: 'DM Sans', system-ui, sans-serif;
         font-weight: 600;
-        display: block;
-        margin-bottom: 0.2rem;
+        font-size: 0.97rem;
+        color: var(--accent);
+        text-decoration: none;
+        letter-spacing: -0.01em;
       }
-      .card span {
+      .project-name:hover { text-decoration: underline; text-underline-offset: 3px; }
+      .project-desc {
+        font-size: 0.9rem;
         color: var(--muted);
-        font-size: 0.95rem;
+        margin: 0.2rem 0 0;
+        line-height: 1.55;
       }
-      footer {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
+      .project-stack {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.72rem;
+        color: var(--muted);
+        white-space: nowrap;
+        padding-top: 0.15rem;
+        text-align: right;
+        letter-spacing: -0.01em;
+      }
+      .project-badge {
+        display: inline-block;
+        background: color-mix(in srgb, var(--accent) 12%, transparent);
+        color: var(--accent);
+        border-radius: 4px;
+        padding: 0.08rem 0.4rem;
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        vertical-align: middle;
+        margin-left: 0.2rem;
+      }
+
+      /* ── Experience ── */
+      .job { margin-bottom: 1.75rem; }
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        margin-bottom: 0.15rem;
+      }
+      .job-title {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: var(--fg);
+      }
+      .job-date {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+      .job-org {
+        font-size: 0.88rem;
+        color: var(--muted);
+        font-style: italic;
+        margin-bottom: 0.65rem;
+      }
+      ul {
+        margin: 0 0 0.75rem;
+        padding-left: 1.2rem;
+      }
+      li { margin-bottom: 0.3rem; }
+
+      /* ── Education ── */
+      .edu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .edu-list li {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 0.6rem;
+        align-items: baseline;
+      }
+      .edu-list li::before {
+        content: '—';
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      /* ── Divider ── */
+      hr {
+        border: none;
         border-top: 1px solid var(--border);
-        font-size: 0.92rem;
+        margin: 2.5rem 0;
+      }
+
+      /* ── Footer ── */
+      footer {
+        display: flex;
+        gap: 1.4rem;
+        flex-wrap: wrap;
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 0.88rem;
         color: var(--muted);
+        margin-top: 3rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--border);
+      }
+      footer a { color: var(--accent); }
+      footer a:hover { color: var(--accent-hover); }
+
+      /* ── Responsive ── */
+      @media (max-width: 560px) {
+        .wrap { padding: 2rem 1.1rem 4rem; }
+        .name { font-size: 2rem; }
+        .tools-grid { grid-template-columns: repeat(2, 1fr); }
+        .project-card { grid-template-columns: 1fr; }
+        .project-stack { text-align: left; }
+        .meta-row { gap: 0.4rem 0.9rem; }
       }
     </style>
   </head>
   <body>
     <div class="wrap">
+
       <header>
-        <h1>Seth Saler</h1>
-        <p class="lede">
-          Senior Legal Engineer · Orlando, FL ·
-          <a href="https://www.linkedin.com/in/sethsaler">LinkedIn</a>
-        </p>
+        <h1 class="name">Seth Saler</h1>
+        <p class="tagline">Senior Legal Engineer &mdash; Orlando, FL</p>
+        <div class="meta-row">
+          <span class="meta-chip">💼 xMentium, Inc.</span>
+          <span class="meta-chip">⚖️ Indiana Bar, active</span>
+          <a class="meta-chip" href="https://www.linkedin.com/in/sethsaler">🔗 LinkedIn</a>
+          <a class="meta-chip" href="https://sethsaler.github.io/resume/">🌐 sethsaler.github.io/resume</a>
+          <a class="meta-chip" href="mailto:sethsaler@gmail.com">✉️ sethsaler@gmail.com</a>
+        </div>
       </header>
 
-      <p>
-        I build <strong>micro-tools</strong>: CLI utilities, desktop helpers, browser extensions, and
-        automation that do one job clearly—usually with a README you can follow in five minutes.
-        By day I work on <strong>AI-powered contract lifecycle</strong> software, metadata, and customer
-        rollouts; by night I wire up PDFs, CSVs, Chrome, and whatever the messy edge case needs.
+      <p class="intro">
+        I build <strong>micro-tools</strong>: CLI utilities, desktop helpers, browser extensions, and automation that do one job clearly &mdash; usually with a README you can follow in five minutes.
+        By day I work on <strong>AI-powered contract lifecycle</strong> software, metadata, and customer rollouts; by night I wire up PDFs, CSVs, Chrome, and whatever the messy edge case needs.
       </p>
 
-      <h2>About</h2>
-      <p>
-        I am a lawyer who ships. I care about the handoff between legal strategy, product, and engineering:
-        crisp requirements and demos that survive contact with real data. I stay on the
-        <strong>frontier of AI</strong>—models, tooling, and where legal tech is headed—so roadmap calls
-        match what is possible and economical now, not what was easy to imagine six months ago.
-      </p>
+      <h2>Tools I reach for</h2>
+      <div class="tools-grid">
+        <span class="tool-chip"><span class="tool-icon">🧠</span> Claude / Claude Code</span>
+        <span class="tool-chip"><span class="tool-icon">✦</span> Cursor</span>
+        <span class="tool-chip"><span class="tool-icon">🤖</span> Hermes Agent</span>
+        <span class="tool-chip"><span class="tool-icon">💛</span> Lovable</span>
+        <span class="tool-chip"><span class="tool-icon">⟳</span> Replit</span>
+        <span class="tool-chip"><span class="tool-icon">🦞</span> OpenClaw</span>
+        <span class="tool-chip"><span class="tool-icon">⚡</span> OpenCode</span>
+        <span class="tool-chip"><span class="tool-icon">🔷</span> Codex</span>
+      </div>
+      <p class="tools-caption">Prototyping, autonomous coding, low-boilerplate web apps, and one-off scripts &mdash; each handles a different mode of work.</p>
 
-      <h2>Themes</h2>
-      <ul>
-        <li><strong>Documents</strong> — redlines, extraction, OCR, signature packets</li>
-        <li><strong>Data</strong> — CSV diffing, folder organization, exports for analysis</li>
-        <li><strong>Browsers</strong> — extensions, bookmark sync, download helpers</li>
-        <li><strong>Automation</strong> — workflow glue, local-session cleanup when APIs lie</li>
-      </ul>
-
-      <h2>Projects</h2>
-      <div class="cards" aria-label="Projects">
-        <div class="card">
-          <strong>bookmark-sync</strong>
-          <span>Sync Chrome bookmarks to Atlas, Comet, Dia, and friends.</span>
-        </div>
-        <div class="card">
-          <strong>docx_redline</strong>
-          <span>Compare two Word files; get tracked changes and a report.</span>
-        </div>
-        <div class="card">
-          <strong>medical-pdf-extractor</strong>
-          <span>Lab PDFs to structured time-series JSON via LLM + OCR.</span>
-        </div>
-        <div class="card">
-          <strong>diffchecker</strong>
-          <span>Side-by-side CSV diff with export.</span>
-        </div>
-        <div class="card">
-          <strong><a href="https://github.com/sethsaler/loan-visualizer">loan-visualizer</a></strong>
-          <span>Loan / amortization CSV → charts. <a href="https://sethsaler.github.io/loan-visualizer/">Live demo</a>.</span>
-        </div>
+      <h2>Micro-tool themes</h2>
+      <div class="themes">
+        <span class="theme-pill"><strong>Documents</strong> — redlines, extraction, OCR, signature packets</span>
+        <span class="theme-pill"><strong>Data wrangling</strong> — CSV diffing, folder organization, exports</span>
+        <span class="theme-pill"><strong>Browser glue</strong> — extensions, bookmark sync, download helpers</span>
+        <span class="theme-pill"><strong>Account hygiene</strong> — local-session cleanup when APIs aren't the answer</span>
+        <span class="theme-pill"><strong>Enterprise glue</strong> — integration scripts and runbooks for demos</span>
       </div>
 
-      <p><a href="https://github.com/sethsaler/resume#readme">Full profile on GitHub</a></p>
+      <h2>Projects</h2>
+      <div class="projects">
 
-      <h2>Contact</h2>
-      <p>
-        <a href="mailto:sethsaler@gmail.com">sethsaler@gmail.com</a>
-        ·
-        <a href="https://www.linkedin.com/in/sethsaler">LinkedIn</a>
-      </p>
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/bookmark-sync">bookmark-sync</a>
+            <p class="project-desc">Sync Chrome bookmarks to Atlas, Comet, Dia, etc., with ordering and merge modes</p>
+          </div>
+          <div class="project-stack">Python · Chrome Ext</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/converter">converter</a>
+            <p class="project-desc">Email-to-PDF GUI with one-line install</p>
+          </div>
+          <div class="project-stack">Python · Tkinter</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/docx_redline">docx_redline</a>
+            <p class="project-desc">Compare two Word files on macOS; get tracked changes and a change report</p>
+          </div>
+          <div class="project-stack">Python · AppleScript</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/medical-pdf-extractor">medical-pdf-extractor</a>
+            <p class="project-desc">Lab PDFs → structured time-series JSON via LLM + OCR fallback</p>
+          </div>
+          <div class="project-stack">Python · OpenAI · OCR</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/signature-collector">signature-collector</a>
+            <p class="project-desc">OCR + heuristics → merged signature packet PDF (GUI + CLI)</p>
+          </div>
+          <div class="project-stack">Python · PDFtk</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/file-organization">file-organization</a>
+            <p class="project-desc">Collision-safe sort-into-extension-folders CLI with optional macOS launcher</p>
+          </div>
+          <div class="project-stack">Python · shell</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/diffchecker">diffchecker</a>
+            <p class="project-desc">Side-by-side CSV diff with highlighted rows and CSV/Excel export</p>
+          </div>
+          <div class="project-stack">Python · PyQt</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/downloader">downloader</a>
+            <p class="project-desc">Chrome extension: download media from Reddit, X, Instagram, Threads posts</p>
+          </div>
+          <div class="project-stack">JS · Chrome Ext</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/reddit-saved-cleanup">reddit-saved-cleanup</a>
+            <p class="project-desc">macOS AppleScript helpers to unsave / clear votes via local Chrome</p>
+          </div>
+          <div class="project-stack">AppleScript · Python</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/x-bookmarks-cleanup">x-bookmarks-cleanup</a>
+            <p class="project-desc">Bulk-remove X bookmarks using local Chrome</p>
+          </div>
+          <div class="project-stack">Python · CDP</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/x-mute-list">x-mute-list</a>
+            <p class="project-desc">Add X mute keywords via Chrome DevTools Protocol</p>
+          </div>
+          <div class="project-stack">Python · CDP</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/coo-flags">coo-flags</a>
+            <p class="project-desc">X extension: region flags from "Connected via," optional hide-by-region</p>
+          </div>
+          <div class="project-stack">JS · Chrome Ext</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <a class="project-name" href="https://github.com/sethsaler/loan-visualizer">loan-visualizer</a>
+            <p class="project-desc">Loan / amortization CSV → interactive charts <span class="project-badge">demo</span></p>
+          </div>
+          <div class="project-stack">React · Vite · Chart.js</div>
+        </div>
+
+      </div>
+
+      <hr />
+
+      <h2>Professional experience</h2>
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Senior Legal Engineer</span>
+          <span class="job-date">Oct 2019 &ndash; present</span>
+        </div>
+        <div class="job-org">xMentium, Inc. &mdash; Orlando, FL</div>
+        <ul>
+          <li>Shipped <strong>NER and automation workflows</strong> that enrich document metadata for search and RAG</li>
+          <li>Owned <strong>product vision and roadmap</strong> for an AI-powered contract-lifecycle platform; features in pilot and production</li>
+          <li>Built <strong>dozens of LLM-driven automations</strong> that reduced manual clause drafting and review for enterprise accounts</li>
+          <li>Partnered with <strong>Sales</strong> on pilots and proof-of-value with major customers; built <strong>customer success</strong> motion (office hours, video, in-app guidance)</li>
+          <li>Introduced <strong>GitHub</strong> for automation source control and mentored junior legal engineers</li>
+          <li>Created <strong>clause libraries</strong> and precedent databases for fast retrieval and reuse</li>
+        </ul>
+      </div>
+
+      <h2>Education &amp; credentials</h2>
+      <ul class="edu-list">
+        <li><strong>J.D.</strong>, Indiana University Maurer School of Law, 2019</li>
+        <li><strong>B.A.</strong>, Economics &amp; Political Science, Furman University, 2014</li>
+        <li><strong>Indiana bar</strong>, active and in good standing</li>
+      </ul>
 
       <footer>
-        <a href="https://github.com/sethsaler/resume">GitHub</a>
+        <a href="https://www.linkedin.com/in/sethsaler">LinkedIn</a>
+        <a href="mailto:sethsaler@gmail.com">Email</a>
+        <a href="https://github.com/sethsaler">GitHub</a>
+        <a href="https://github.com/sethsaler/resume">View source</a>
       </footer>
+
     </div>
   </body>
 </html>
