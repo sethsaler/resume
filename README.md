@@ -14,8 +14,8 @@ Portfolio of **micro-tools** I build on the side: CLI utilities, desktop helpers
 
 | | | | |
 |:---:|:---:|:---:|:---:|
-| ![Claude](https://img.shields.io/badge/Anthropic%20Claude-7dd3fc?style=flat&logo=anthropic&logoColor=white) | ![Cursor](https://img.shields.io/badge/Cursor-000000?style=flat&logo=cursor&logoColor=white) | ![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-0c4a6e?style=flat) | ![Lovable](https://img.shields.io/badge/Lovable-ff6b6b?style=flat&logo=heart&logoColor=white) |
-| ![Replit](https://img.shields.io/badge/Replit-f26207?style=flat&logo=replit&logoColor=white) | ![OpenClaw](https://img.shields.io/badge/OpenClaw-10b981?style=flat) | ![OpenCode](https://img.shields.io/badge/OpenCode-6366f1?style=flat) | ![Claude Code](https://img.shields.io/badge/Claude%20Code-7dd3fc?style=flat&logo=anthropic&logoColor=white) |
+| ![Cursor](https://img.shields.io/badge/Cursor-000000?style=flat&logo=cursor&logoColor=white) | ![Claude Code](https://img.shields.io/badge/Claude%20Code-7dd3fc?style=flat&logo=anthropic&logoColor=white) | ![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-0c4a6e?style=flat) | ![Lovable](https://img.shields.io/badge/Lovable-ff6b6b?style=flat&logo=heart&logoColor=white) |
+| ![Replit](https://img.shields.io/badge/Replit-f26207?style=flat&logo=replit&logoColor=white) | ![OpenAI Codex](https://img.shields.io/badge/OpenAI%20Codex-412991?style=flat&logo=openai&logoColor=white) | ![OpenClaw](https://img.shields.io/badge/OpenClaw-10b981?style=flat) | ![OpenCode](https://img.shields.io/badge/OpenCode-6366f1?style=flat) |
 
 These are the tools I use day-to-day for prototyping, automations, and shipping small utilities fast. Each handles a different mode of work — from autonomous coding agents to low-boilerplate web apps to one-off CLI scripts.
 
