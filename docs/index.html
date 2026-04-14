@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seth Saler — Legal engineer & micro-tools</title>
+    <meta
+      name="description"
+      content="Senior Legal Engineer. Small utilities for documents, data, browsers, and automation."
+    />
+    <style>
+      :root {
+        --bg: #f7f4ef;
+        --fg: #1c1917;
+        --muted: #57534e;
+        --accent: #0c4a6e;
+        --border: #d6d3d1;
+        --card: #fffefb;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #12100e;
+          --fg: #f5f5f4;
+          --muted: #a8a29e;
+          --accent: #7dd3fc;
+          --border: #292524;
+          --card: #1c1917;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.65;
+        font-size: 1.05rem;
+      }
+      .wrap {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.35rem 4rem;
+      }
+      header {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        font-size: 1.85rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.35rem;
+      }
+      .lede {
+        font-size: 1.1rem;
+        color: var(--muted);
+        margin: 0;
+      }
+      h2 {
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 2.25rem 0 0.75rem;
+      }
+      p {
+        margin: 0 0 1rem;
+      }
+      ul {
+        margin: 0 0 1rem;
+        padding-left: 1.2rem;
+      }
+      li {
+        margin-bottom: 0.35rem;
+      }
+      a {
+        color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        text-decoration-thickness: 2px;
+      }
+      .cards {
+        display: grid;
+        gap: 0.65rem;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.85rem 1rem;
+      }
+      .card strong {
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+      .card span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      footer {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Seth Saler</h1>
+        <p class="lede">
+          Senior Legal Engineer · Orlando, FL ·
+          <a href="https://www.linkedin.com/in/sethsaler">LinkedIn</a>
+        </p>
+      </header>
+
+      <p>
+        I build <strong>micro-tools</strong>: CLI utilities, desktop helpers, browser extensions, and
+        automation that do one job clearly—usually with a README you can follow in five minutes.
+        By day I work on <strong>AI-powered contract lifecycle</strong> software, metadata, and customer
+        rollouts; by night I wire up PDFs, CSVs, Chrome, and whatever the messy edge case needs.
+      </p>
+
+      <h2>About</h2>
+      <p>
+        I am a lawyer who ships. I care about the handoff between legal strategy, product, and engineering:
+        crisp requirements and demos that survive contact with real data. I stay on the
+        <strong>frontier of AI</strong>—models, tooling, and where legal tech is headed—so roadmap calls
+        match what is possible and economical now, not what was easy to imagine six months ago.
+      </p>
+
+      <h2>Themes</h2>
+      <ul>
+        <li><strong>Documents</strong> — redlines, extraction, OCR, signature packets</li>
+        <li><strong>Data</strong> — CSV diffing, folder organization, exports for analysis</li>
+        <li><strong>Browsers</strong> — extensions, bookmark sync, download helpers</li>
+        <li><strong>Automation</strong> — workflow glue, local-session cleanup when APIs lie</li>
+      </ul>
+
+      <h2>Projects</h2>
+      <div class="cards" aria-label="Projects">
+        <div class="card">
+          <strong>bookmark-sync</strong>
+          <span>Sync Chrome bookmarks to Atlas, Comet, Dia, and friends.</span>
+        </div>
+        <div class="card">
+          <strong>docx_redline</strong>
+          <span>Compare two Word files; get tracked changes and a report.</span>
+        </div>
+        <div class="card">
+          <strong>medical-pdf-extractor</strong>
+          <span>Lab PDFs to structured time-series JSON via LLM + OCR.</span>
+        </div>
+        <div class="card">
+          <strong>diffchecker</strong>
+          <span>Side-by-side CSV diff with export.</span>
+        </div>
+        <div class="card">
+          <strong><a href="https://github.com/sethsaler/loan-visualizer">loan-visualizer</a></strong>
+          <span>Loan / amortization CSV → charts. <a href="https://sethsaler.github.io/loan-visualizer/">Live demo</a>.</span>
+        </div>
+      </div>
+
+      <p><a href="https://github.com/sethsaler/resume#readme">Full profile on GitHub</a></p>
+
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:sethsaler@gmail.com">sethsaler@gmail.com</a>
+        ·
+        <a href="https://www.linkedin.com/in/sethsaler">LinkedIn</a>
+      </p>
+
+      <footer>
+        <a href="https://github.com/sethsaler/resume">GitHub</a>
+      </footer>
+    </div>
+  </body>
+</html>
