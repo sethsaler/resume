@@ -39,19 +39,20 @@ These projects are **narrow in scope** and **easy to adopt**: one installer or o
 
 | Project | What it does | Stack |
 |---|---|---|
-| [bookmark-sync](https://github.com/sethsaler/bookmark-sync) | Sync Chrome bookmarks to Atlas, Comet, Dia, etc., with ordering and merge modes | Python, Chrome Extensions |
-| [converter](https://github.com/sethsaler/converter) | Email-to-PDF GUI with one-line install | Python, Tkinter |
-| [diffchecker](https://github.com/sethsaler/diffchecker) | Desktop CSV diff with highlighted rows and CSV/Excel export | Python, PyQt |
-| [docx_redline](https://github.com/sethsaler/docx_redline) | Compare two Word files on macOS → tracked changes + change report | Python, AppleScript |
-| [file-organization](https://github.com/sethsaler/file-organization) | Collision-safe sort-into-extension-folders CLI + macOS launcher | Python, shell |
-| [medical-pdf-extractor](https://github.com/sethsaler/medical-pdf-extractor) | Lab PDFs → structured JSON time series via LLM + OCR fallback | Python, OpenAI, OCR |
-| [signature-collector](https://github.com/sethsaler/signature-collector) | OCR + heuristics → merged signature packet PDF (GUI + CLI) | Python, PDFtk |
-| [downloader](https://github.com/sethsaler/downloader) | Chrome extension: download media from Reddit, X, Instagram, Threads | JS, Chrome Extensions |
-| [reddit-saved-cleanup](https://github.com/sethsaler/reddit-saved-cleanup) | macOS AppleScript helpers to unsave / clear votes via local Chrome | AppleScript, Python |
-| [x-bookmarks-cleanup](https://github.com/sethsaler/x-bookmarks-cleanup) | Bulk-remove X bookmarks using local Chrome | Python, Chrome DevTools |
-| [x-mute-list](https://github.com/sethsaler/x-mute-list) | Add X mute keywords via Chrome DevTools Protocol | Python, CDP |
-| [coo-flags](https://github.com/sethsaler/coo-flags) | X extension: region flags from "Connected via," hide-by-region option | JS, Chrome Extensions |
-| [loan-visualizer](https://github.com/sethsaler/loan-visualizer) | Loan / amortization CSV → interactive charts · **[live demo](https://sethsaler.github.io/loan-visualizer/)** | React, Vite, Chart.js |
+| [bookmark-sync](https://github.com/sethsaler/bookmark-sync) | Sync Chrome bookmarks to Atlas, Comet, Dia, etc., with ordering and merge modes | Python · Chrome Ext |
+| [converter](https://github.com/sethsaler/converter) | Email-to-PDF GUI with one-line install | Python · Tkinter |
+| [coo-flags](https://github.com/sethsaler/coo-flags) | X extension: region flags from "Connected via," hide-by-region option | JS · Chrome Ext |
+| [diffchecker](https://github.com/sethsaler/diffchecker) | Desktop CSV diff with highlighted rows and CSV/Excel export | Python · PyQt |
+| [docx_redline](https://github.com/sethsaler/docx_redline) | Compare two Word files on macOS → tracked changes + change report | Python · AppleScript |
+| [downloader](https://github.com/sethsaler/downloader) | Chrome extension: download media from Reddit, X, Instagram, Threads | JS · Chrome Ext |
+| [file-organization](https://github.com/sethsaler/file-organization) | Collision-safe sort-into-extension-folders CLI + macOS launcher | Python · shell |
+| [loan-visualizer](https://github.com/sethsaler/loan-visualizer) | Loan / amortization CSV → interactive charts · **[live demo](https://sethsaler.github.io/loan-visualizer/)** | React · Vite · Chart.js |
+| [medical-pdf-extractor](https://github.com/sethsaler/medical-pdf-extractor) | Lab PDFs → structured JSON time series via LLM + OCR fallback | Python · OpenAI · OCR |
+| [reddit-saved-cleanup](https://github.com/sethsaler/reddit-saved-cleanup) | macOS AppleScript helpers to unsave / clear votes via local Chrome | AppleScript · Python |
+| [redactor](https://github.com/sethsaler/redactor) | Privacy-focused document redactor with GUI for PDFs/CSVs/Excel | Python · Tkinter · PyMuPDF |
+| [signature-collector](https://github.com/sethsaler/signature-collector) | OCR + heuristics → merged signature packet PDF (GUI + CLI) | Python · PDFtk |
+| [x-bookmarks-cleanup](https://github.com/sethsaler/x-bookmarks-cleanup) | Bulk-remove X bookmarks using local Chrome | Python · Chrome DevTools |
+| [x-mute-list](https://github.com/sethsaler/x-mute-list) | Add X mute keywords via Chrome DevTools Protocol | Python · CDP |
 
 ---
 
