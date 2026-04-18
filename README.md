@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Indiana%20Bar-7dd3fc?style=flat-square" alt="Bar badge" />
 </p>
 
-Portfolio of **micro-tools** I build on the side: CLI utilities, desktop helpers, browser extensions, and small automation. Published site: **[sethsaler.github.io/resume](https://sethsaler.github.io/resume/)**
+Portfolio of **micro-tools** I build on the side: CLI utilities, desktop helpers, browser extensions, and small automation. In my day job I also stay on top of the **AI landscape** (news, trends, and tooling) so the company can prioritize paradigms such as RAG, structured JSON prompting, Skills, MCPs, and CLIs early in the adoption cycle. Published site: **[sethsaler.github.io/resume](https://sethsaler.github.io/resume/)**
 
 ---
 
@@ -62,6 +62,7 @@ These projects are **narrow in scope** and **easy to adopt**: one installer or o
 
 **xMentium, Inc.** — Orlando, FL · **Senior Legal Engineer** · Oct 2019 – present  
 
+- Stayed current on **AI news and trends** to help prioritize emerging paradigms (RAG, structured JSON prompting, Skills, MCPs, CLIs, and similar) early in the adoption cycle  
 - Shipped **NER and automation workflows** that enrich document metadata for search and RAG  
 - Owned **product vision and roadmap** for an AI-powered contract-lifecycle platform; features in pilot and production  
 - Built **dozens of LLM-driven automations** that reduced manual clause drafting and review for enterprise accounts  
