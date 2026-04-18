@@ -48,9 +48,11 @@ These projects are **narrow in scope** and **easy to adopt**: one installer or o
 | [file-organization](https://github.com/sethsaler/file-organization) | Collision-safe sort-into-extension-folders CLI + macOS launcher | Python · shell |
 | [loan-visualizer](https://github.com/sethsaler/loan-visualizer) | Loan / amortization CSV → interactive charts · **[live demo](https://sethsaler.github.io/loan-visualizer/)** | React · Vite · Chart.js |
 | [medical-pdf-extractor](https://github.com/sethsaler/medical-pdf-extractor) | Lab PDFs → structured JSON time series via LLM + OCR fallback | Python · OpenAI · OCR |
+| [pdf-to-csv](https://github.com/sethsaler/pdf-to-csv) | Folder of tagged PDFs → CSV or Excel via PyMuPDF (GUI + CLI) | Python · Tkinter · PyMuPDF |
 | [reddit-saved-cleanup](https://github.com/sethsaler/reddit-saved-cleanup) | macOS AppleScript helpers to unsave / clear votes via local Chrome | AppleScript · Python |
 | [redactor](https://github.com/sethsaler/redactor) | Privacy-focused document redactor with GUI for PDFs/CSVs/Excel | Python · Tkinter · PyMuPDF |
 | [signature-collector](https://github.com/sethsaler/signature-collector) | OCR + heuristics → merged signature packet PDF (GUI + CLI) | Python · PDFtk |
+| [updater](https://github.com/sethsaler/updater) | update-all-clis: discover CLIs on disk and run the right package-manager updates | Shell · Python · Homebrew · npm |
 | [x-bookmarks-cleanup](https://github.com/sethsaler/x-bookmarks-cleanup) | Bulk-remove X bookmarks using local Chrome | Python · Chrome DevTools |
 | [x-mute-list](https://github.com/sethsaler/x-mute-list) | Add X mute keywords via Chrome DevTools Protocol | Python · CDP |
 
