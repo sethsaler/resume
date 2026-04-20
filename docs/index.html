@@ -265,6 +265,8 @@
         letter-spacing: -0.01em;
       }
       .project-name:hover { text-decoration: underline; text-underline-offset: 3px; }
+      .project-name--static { cursor: default; }
+      .project-name--static:hover { text-decoration: none; }
       .project-desc {
         font-size: 0.9rem;
         color: var(--muted);
@@ -396,7 +398,7 @@
 
       <p class="intro">
         I build <strong>micro-tools</strong>: CLI utilities, desktop helpers, browser extensions, and automation that do one job clearly &mdash; usually with a README you can follow in five minutes.
-        By day I work on <strong>AI-powered contract lifecycle</strong> software, metadata, and customer rollouts; a big part of that role is staying on top of shifts in the <strong>AI landscape</strong> by following news and trends closely, so we can prioritize emerging paradigms &mdash; RAG, structured JSON prompting, Skills, MCPs, CLIs, and more &mdash; early in the general adoption cycle.
+        By day I work on <strong>AI-powered contract lifecycle</strong> software, metadata, and customer rollouts; a big part of that role is staying on top of shifts in the <strong>AI landscape</strong> by following news and trends closely, so we can prioritize emerging paradigms &mdash; RAG, structured JSON prompting, Skills, MCPs, CLIs, and more &mdash; early in the general adoption cycle. Lately I have been building <strong>Cerberus</strong>, a Cursor <strong>agent skill</strong> that gives coding agents repeatable guardrails and review steps instead of one-off instructions each session.
         By night I wire up PDFs, CSVs, Chrome, and whatever the messy edge case needs.
       </p>
 
@@ -405,6 +407,7 @@
         <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/126759922?v=4" alt="" width="20" height="20" /> Cursor</span>
         <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" width="20" height="20" /> Claude Code</span>
         <span class="tool-chip"><span class="tool-icon">🤖</span> Hermes Agent</span>
+        <span class="tool-chip"><span class="tool-icon">🐕</span> Cerberus skill</span>
         <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/1811962?v=4" alt="" width="20" height="20" /> Lovable</span>
         <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/983194?v=4" alt="" width="20" height="20" /> Replit</span>
         <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" width="20" height="20" /> OpenAI Codex</span>
@@ -424,6 +427,14 @@
 
       <h2>Projects</h2>
       <div class="projects">
+
+        <div class="project-card">
+          <div>
+            <span class="project-name project-name--static">Cerberus</span>
+            <p class="project-desc">Cursor agent skill in active development: encodes how agents should review and sanity-check their own diffs so the same standards apply every run</p>
+          </div>
+          <div class="project-stack">Cursor · Skills · agents</div>
+        </div>
 
         <div class="project-card">
           <div>
@@ -566,6 +577,7 @@
         <div class="job-org">xMentium, Inc. &mdash; Orlando, FL</div>
         <ul>
           <li>Stayed current on <strong>AI news and trends</strong> to help prioritize emerging paradigms (RAG, structured JSON prompting, Skills, MCPs, CLIs, and similar) early in the adoption cycle</li>
+          <li>Developing <strong>Cerberus</strong>, a Cursor <strong>agent skill</strong> for repeatable agent-side review and guardrails on generated code (in active iteration)</li>
           <li>Shipped <strong>NER and automation workflows</strong> that enrich document metadata for search and RAG</li>
           <li>Owned <strong>product vision and roadmap</strong> for an AI-powered contract-lifecycle platform; features in pilot and production</li>
           <li>Built <strong>dozens of LLM-driven automations</strong> that reduced manual clause drafting and review for enterprise accounts</li>

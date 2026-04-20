@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Indiana%20Bar-7dd3fc?style=flat-square" alt="Bar badge" />
 </p>
 
-Portfolio of **micro-tools** I build on the side: CLI utilities, desktop helpers, browser extensions, and small automation. In my day job I also stay on top of the **AI landscape** (news, trends, and tooling) so the company can prioritize paradigms such as RAG, structured JSON prompting, Skills, MCPs, and CLIs early in the adoption cycle. Published site: **[sethsaler.github.io/resume](https://sethsaler.github.io/resume/)**
+Portfolio of **micro-tools** I build on the side: CLI utilities, desktop helpers, browser extensions, and small automation. In my day job I also stay on top of the **AI landscape** (news, trends, and tooling) so the company can prioritize paradigms such as RAG, structured JSON prompting, Skills, MCPs, and CLIs early in the adoption cycle. I am also building **Cerberus**, a Cursor **agent skill** that encodes repeatable review and guardrails for autonomous coding agents. Published site: **[sethsaler.github.io/resume](https://sethsaler.github.io/resume/)**
 
 ---
 
@@ -16,6 +16,7 @@ Portfolio of **micro-tools** I build on the side: CLI utilities, desktop helpers
 |:---:|:---:|:---:|:---:|
 | ![Cursor](https://img.shields.io/badge/Cursor-000000?style=flat&logo=cursor&logoColor=white) | ![Claude Code](https://img.shields.io/badge/Claude%20Code-7dd3fc?style=flat&logo=anthropic&logoColor=white) | ![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-0c4a6e?style=flat) | ![Lovable](https://img.shields.io/badge/Lovable-ff6b6b?style=flat&logoColor=white) |
 | ![Replit](https://img.shields.io/badge/Replit-f26207?style=flat&logo=replit&logoColor=white) | ![OpenAI Codex](https://img.shields.io/badge/OpenAI%20Codex-412991?style=flat&logo=openai&logoColor=white) | ![OpenClaw](https://img.shields.io/badge/OpenClaw-10b981?style=flat) | ![OpenCode](https://img.shields.io/badge/OpenCode-6366f1?style=flat) |
+| ![Cerberus skill](https://img.shields.io/badge/Cerberus%20agent%20skill-0c4a6e?style=flat) | | | |
 
 These are the tools I use day-to-day for prototyping, automations, and shipping small utilities fast. Each handles a different mode of work — from autonomous coding agents to low-boilerplate web apps to one-off CLI scripts.
 
@@ -39,6 +40,7 @@ These projects are **narrow in scope** and **easy to adopt**: one installer or o
 
 | Project | What it does | Stack |
 |---|---|---|
+| **Cerberus** | Cursor agent skill (in development): repeatable agent-side review and guardrails on generated code | Cursor · Skills · agents |
 | [bookmark-sync](https://github.com/sethsaler/bookmark-sync) | Sync Chrome bookmarks to Atlas, Comet, Dia, etc., with ordering and merge modes | Python · Chrome Ext |
 | [converter](https://github.com/sethsaler/converter) | Email-to-PDF GUI with one-line install | Python · Tkinter |
 | [coo-flags](https://github.com/sethsaler/coo-flags) | X extension: region flags from "Connected via," hide-by-region option | JS · Chrome Ext |
@@ -63,6 +65,7 @@ These projects are **narrow in scope** and **easy to adopt**: one installer or o
 **xMentium, Inc.** — Orlando, FL · **Senior Legal Engineer** · Oct 2019 – present  
 
 - Stayed current on **AI news and trends** to help prioritize emerging paradigms (RAG, structured JSON prompting, Skills, MCPs, CLIs, and similar) early in the adoption cycle  
+- Developing **Cerberus**, a Cursor **agent skill** for repeatable agent-side review and guardrails on generated code (in active iteration)  
 - Shipped **NER and automation workflows** that enrich document metadata for search and RAG  
 - Owned **product vision and roadmap** for an AI-powered contract-lifecycle platform; features in pilot and production  
 - Built **dozens of LLM-driven automations** that reduced manual clause drafting and review for enterprise accounts  
