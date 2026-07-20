@@ -1,606 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Seth Saler — Legal engineer & micro-tools</title>
-    <meta name="description" content="Senior Legal Engineer. Micro-tools for documents, data wrangling, browsers, and automation. Orlando, FL." />
+    <title>Seth Saler | Senior Legal Engineer</title>
+    <meta name="description" content="Resume and selected public work from Seth Saler, a Senior Legal Engineer building AI-enabled legal products and practical developer tools." />
     <meta name="author" content="Seth Saler" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Seth Saler — Legal engineer & micro-tools" />
-    <meta property="og:description" content="Portfolio of micro-tools: CLI utilities, desktop helpers, browser extensions, and automation that do one job clearly." />
+    <meta property="og:title" content="Seth Saler | Senior Legal Engineer" />
+    <meta property="og:description" content="AI-enabled legal products, document workflows, and practical developer tools." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sethsaler.github.io/resume/" />
-    <meta property="og:image" content="https://repository-images.githubusercontent.com/0/0/0" />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Seth Saler — Legal engineer & micro-tools" />
-    <meta name="twitter:description" content="Micro-tools for documents, data, browsers, and automation." />
-
-    <!-- Favicon (inline SVG as data URI) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c4a6e'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'%3ES%3C/text%3E%3C/svg%3E" />
-
-    <!-- Google Fonts -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'%3ES%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
     <style>
-      /* ── Tokens ── */
-      :root {
-        --bg: #f7f4ef;
-        --fg: #1c1917;
-        --muted: #57534e;
-        --accent: #0c4a6e;
-        --accent-hover: #0a3a57;
-        --accent-light: #7dd3fc;
-        --border: #d6d3d1;
-        --card: #fffefb;
-        --tag-bg: #e7e5e4;
-        --tag-fg: #44403c;
-        --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-        --shadow-hover: 0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+      :root { --ink:#172033; --muted:#5d687b; --blue:#1d4ed8; --line:#d9e0ea; --paper:#fff; --wash:#f4f7fb; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; background:var(--wash); color:var(--ink); font-family:'DM Sans',system-ui,sans-serif; font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+      a { color:var(--blue); text-decoration:none; }
+      a:hover { text-decoration:underline; text-underline-offset:3px; }
+      .page { width:100%; max-width:1060px; margin:32px auto; background:var(--paper); box-shadow:0 14px 40px rgba(23,32,51,.08); }
+      .header { padding:54px 64px 38px; border-bottom:1px solid var(--line); }
+      .name { margin:0; font:700 42px/1.1 'Libre Baskerville',Georgia,serif; letter-spacing:-.035em; }
+      .role { margin:9px 0 20px; color:var(--blue); font-size:17px; font-weight:600; }
+      .contact { display:flex; flex-wrap:wrap; gap:8px 22px; min-width:0; color:var(--muted); font-size:13px; }
+      .contact a { font-weight:500; }
+      .layout { display:grid; grid-template-columns:minmax(0,1fr) 270px; gap:52px; padding:42px 64px 64px; }
+      main { min-width:0; }
+      aside { border-left:1px solid var(--line); padding-left:28px; }
+      .section { margin:0 0 40px; }
+      .section:last-child { margin-bottom:0; }
+      .section-title { display:flex; align-items:center; gap:12px; margin:0 0 20px; color:var(--ink); font-size:12px; letter-spacing:.14em; line-height:1; text-transform:uppercase; }
+      .section-title::after { content:''; height:1px; flex:1; background:var(--line); }
+      .summary { max-width:100%; margin:-2px 0 34px; color:#3f4a5c; font-size:17px; line-height:1.72; overflow-wrap:anywhere; }
+      .job { margin-bottom:32px; }
+      .job:last-child { margin-bottom:0; }
+      .job-head { display:flex; justify-content:space-between; align-items:baseline; gap:16px; }
+      .job-title { margin:0; font-size:18px; font-weight:700; }
+      .date { color:var(--muted); font-size:13px; white-space:nowrap; }
+      .org { margin:2px 0 12px; color:var(--muted); font-size:14px; }
+      ul { margin:0; padding-left:20px; }
+      li { margin-bottom:7px; }
+      .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 24px; }
+      .project { padding-top:14px; border-top:2px solid #b9c8e5; }
+      .project h3 { margin:0; font-size:16px; line-height:1.35; }
+      .project p { margin:6px 0 7px; color:var(--muted); font-size:13px; line-height:1.55; }
+      .stack { color:#718096; font-size:11px; letter-spacing:.04em; text-transform:uppercase; }
+      .note { margin:-9px 0 20px; color:var(--muted); font-size:13px; }
+      aside .section-title { margin-bottom:14px; }
+      .side-list { list-style:none; padding:0; margin:0; }
+      .side-list li { margin-bottom:13px; color:var(--muted); font-size:13px; line-height:1.45; }
+      .side-list strong { display:block; color:var(--ink); font-size:14px; }
+      .skill-group { margin-bottom:20px; }
+      .skill-group h3 { margin:0 0 6px; font-size:13px; }
+      .skill-group p { margin:0; color:var(--muted); font-size:13px; line-height:1.55; }
+      footer { padding:18px 64px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+      @media (max-width:1100px) {
+        .page { margin:0; box-shadow:none; }
+        .header, .layout { padding-left:24px; padding-right:24px; }
+        .header { padding-top:38px; }
+        .layout { display:block; }
+        aside { margin-top:42px; padding:28px 0 0; border-top:1px solid var(--line); border-left:0; }
       }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #111110;
-          --fg: #f5f5f4;
-          --muted: #a8a29e;
-          --accent: #7dd3fc;
-          --accent-hover: #a0d8ff;
-          --accent-light: #7dd3fc;
-          --border: #292524;
-          --card: #1c1917;
-          --tag-bg: #292524;
-          --tag-fg: #d6d3d1;
-          --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
-          --shadow-hover: 0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.25);
-        }
+      @media (max-width:600px) {
+        body { font-size:14px; }
+        .name { font-size:33px; }
+        .job-head { display:block; }
+        .date { display:block; margin-top:3px; }
+        .projects { grid-template-columns:1fr; }
+        footer { padding-left:24px; padding-right:24px; }
       }
-
-      /* ── Reset & base ── */
-      *, *::before, *::after { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: 'Newsreader', Georgia, 'Times New Roman', Times, serif;
-        background: var(--bg);
-        color: var(--fg);
-        line-height: 1.75;
-        font-size: 1.05rem;
-        -webkit-font-smoothing: antialiased;
-      }
-      a {
-        color: var(--accent);
-        text-decoration-thickness: 1px;
-        text-underline-offset: 3px;
-        transition: color 0.15s;
-      }
-      a:hover { color: var(--accent-hover); }
-
-      /* ── Layout ── */
-      .wrap {
-        max-width: 50rem;
-        margin: 0 auto;
-        padding: 3.5rem 1.75rem 6rem;
-      }
-
-      /* ── Header ── */
-      header { margin-bottom: 2.5rem; }
-      .name {
-        font-family: 'Newsreader', serif;
-        font-size: 2.6rem;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-        line-height: 1.05;
-        margin: 0 0 0.3rem;
-        color: var(--fg);
-      }
-      .tagline {
-        font-size: 1.05rem;
-        color: var(--muted);
-        margin: 0;
-        font-style: italic;
-      }
-      .meta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem 1.2rem;
-        margin-top: 0.75rem;
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-size: 0.85rem;
-        color: var(--muted);
-      }
-      .meta-row a { color: var(--accent); }
-      .meta-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.3rem;
-        background: var(--tag-bg);
-        color: var(--tag-fg);
-        border-radius: 20px;
-        padding: 0.15rem 0.65rem;
-        font-size: 0.8rem;
-        font-weight: 500;
-      }
-      .intro {
-        font-size: 1.03rem;
-        color: var(--muted);
-        max-width: 44rem;
-        border-left: 3px solid var(--accent);
-        padding-left: 1rem;
-        margin: 1.5rem 0 0;
-        line-height: 1.7;
-      }
-      .intro strong { color: var(--fg); font-weight: 600; }
-
-      /* ── Section headings ── */
-      h2 {
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin: 2.75rem 0 0.8rem;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-      h2::after {
-        content: '';
-        flex: 1;
-        height: 1px;
-        background: var(--border);
-      }
-      h2:first-of-type { margin-top: 2rem; }
-
-      /* ── Tools grid ── */
-      .tools-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-        gap: 0.6rem;
-        margin-top: 0.1rem;
-      }
-      .tool-chip {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 0.55rem 0.8rem;
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-size: 0.84rem;
-        font-weight: 500;
-        color: var(--fg);
-        text-decoration: none;
-        box-shadow: var(--shadow);
-        transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
-      }
-      .tool-chip:hover {
-        border-color: var(--accent);
-        box-shadow: var(--shadow-hover);
-        transform: translateY(-1px);
-        color: var(--accent);
-      }
-      .tool-icon {
-        width: 20px;
-        height: 20px;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
-      }
-      .tool-logo {
-        width: 20px;
-        height: 20px;
-        flex-shrink: 0;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-      }
-      .tools-caption {
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-size: 0.8rem;
-        color: var(--muted);
-        margin-top: 0.6rem;
-        font-style: italic;
-      }
-
-      /* ── Theme pills ── */
-      .themes {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.1rem;
-      }
-      .theme-pill {
-        background: var(--tag-bg);
-        color: var(--tag-fg);
-        border-radius: 8px;
-        padding: 0.3rem 0.85rem;
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-size: 0.84rem;
-        font-weight: 500;
-        border: 1px solid transparent;
-        transition: border-color 0.15s;
-      }
-      .theme-pill:hover { border-color: var(--accent); }
-      .theme-pill strong { font-weight: 600; color: var(--accent); }
-
-      /* ── Projects ── */
-      .projects {
-        display: grid;
-        gap: 0.65rem;
-        margin-top: 0.1rem;
-      }
-      .project-card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 0.9rem 1.15rem;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 0.25rem 1.25rem;
-        align-items: start;
-        box-shadow: var(--shadow);
-        transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
-      }
-      .project-card:hover {
-        border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-        box-shadow: var(--shadow-hover);
-        transform: translateY(-1px);
-      }
-      .project-name {
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-weight: 600;
-        font-size: 0.97rem;
-        color: var(--accent);
-        text-decoration: none;
-        letter-spacing: -0.01em;
-      }
-      .project-name:hover { text-decoration: underline; text-underline-offset: 3px; }
-      .project-name--static { cursor: default; }
-      .project-name--static:hover { text-decoration: none; }
-      .project-desc {
-        font-size: 0.9rem;
-        color: var(--muted);
-        margin: 0.2rem 0 0;
-        line-height: 1.55;
-      }
-      .project-stack {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.72rem;
-        color: var(--muted);
-        white-space: nowrap;
-        padding-top: 0.15rem;
-        text-align: right;
-        letter-spacing: -0.01em;
-      }
-      .project-badge {
-        display: inline-block;
-        background: color-mix(in srgb, var(--accent) 12%, transparent);
-        color: var(--accent);
-        border-radius: 4px;
-        padding: 0.08rem 0.4rem;
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        vertical-align: middle;
-        margin-left: 0.2rem;
-      }
-
-      /* ── Experience ── */
-      .job { margin-bottom: 1.75rem; }
-      .job-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        flex-wrap: wrap;
-        gap: 0.25rem;
-        margin-bottom: 0.15rem;
-      }
-      .job-title {
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-weight: 600;
-        font-size: 1.02rem;
-        color: var(--fg);
-      }
-      .job-date {
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-size: 0.82rem;
-        color: var(--muted);
-      }
-      .job-org {
-        font-size: 0.88rem;
-        color: var(--muted);
-        font-style: italic;
-        margin-bottom: 0.65rem;
-      }
-      ul {
-        margin: 0 0 0.75rem;
-        padding-left: 1.2rem;
-      }
-      li { margin-bottom: 0.3rem; }
-
-      /* ── Education ── */
-      .edu-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .edu-list li {
-        display: flex;
-        gap: 0.5rem;
-        margin-bottom: 0.6rem;
-        align-items: baseline;
-      }
-      .edu-list li::before {
-        content: '—';
-        color: var(--accent);
-        flex-shrink: 0;
-      }
-
-      /* ── Divider ── */
-      hr {
-        border: none;
-        border-top: 1px solid var(--border);
-        margin: 2.5rem 0;
-      }
-
-      /* ── Footer ── */
-      footer {
-        display: flex;
-        gap: 1.4rem;
-        flex-wrap: wrap;
-        font-family: 'DM Sans', system-ui, sans-serif;
-        font-size: 0.88rem;
-        color: var(--muted);
-        margin-top: 3rem;
-        padding-top: 1.75rem;
-        border-top: 1px solid var(--border);
-      }
-      footer a { color: var(--accent); }
-      footer a:hover { color: var(--accent-hover); }
-
-      /* ── Responsive ── */
-      @media (max-width: 560px) {
-        .wrap { padding: 2rem 1.1rem 4rem; }
-        .name { font-size: 2rem; }
-        .tools-grid { grid-template-columns: repeat(2, 1fr); }
-        .project-card { grid-template-columns: 1fr; }
-        .project-stack { text-align: left; }
-        .meta-row { gap: 0.4rem 0.9rem; }
+      @media print {
+        body { background:#fff; }
+        .page { max-width:none; margin:0; box-shadow:none; }
+        .header, .layout { padding-left:0; padding-right:0; }
+        footer { padding-left:0; padding-right:0; }
+        a { color:inherit; }
       }
     </style>
   </head>
   <body>
-    <div class="wrap">
-
-      <header>
+    <article class="page">
+      <header class="header">
         <h1 class="name">Seth Saler</h1>
-        <p class="tagline">Senior Legal Engineer &mdash; Orlando, FL</p>
-        <div class="meta-row">
-          <span class="meta-chip">💼 xMentium, Inc.</span>
-          <span class="meta-chip">⚖️ Indiana Bar, active</span>
-          <a class="meta-chip" href="https://www.linkedin.com/in/sethsaler">🔗 LinkedIn</a>
-          <a class="meta-chip" href="https://sethsaler.github.io/resume/">🌐 sethsaler.github.io/resume</a>
-          <a class="meta-chip" href="mailto:sethsaler@gmail.com">✉️ sethsaler@gmail.com</a>
-        </div>
+        <p class="role">Senior Legal Engineer · Orlando, Florida</p>
+        <nav class="contact" aria-label="Contact links">
+          <a href="mailto:sethsaler@gmail.com">sethsaler@gmail.com</a>
+          <a href="https://www.linkedin.com/in/sethsaler">LinkedIn</a>
+          <a href="https://github.com/sethsaler">GitHub</a>
+          <span>Indiana bar · active</span>
+        </nav>
       </header>
 
-      <p class="intro">
-        I build <strong>micro-tools</strong>: CLI utilities, desktop helpers, browser extensions, and automation that do one job clearly &mdash; usually with a README you can follow in five minutes.
-        By day I work on <strong>AI-powered contract lifecycle</strong> software, metadata, and customer rollouts; a big part of that role is staying on top of shifts in the <strong>AI landscape</strong> by following news and trends closely, so we can prioritize emerging paradigms &mdash; RAG, structured JSON prompting, Skills, MCPs, CLIs, and more &mdash; early in the general adoption cycle. Lately I have been building <strong>Cerberus</strong>, a Cursor <strong>agent skill</strong> that gives coding agents repeatable guardrails and review steps instead of one-off instructions each session.
-        By night I wire up PDFs, CSVs, Chrome, and whatever the messy edge case needs.
-      </p>
+      <div class="layout">
+        <main>
+          <section class="section">
+            <h2 class="section-title">Profile</h2>
+            <p class="summary">Legal engineer and product-minded builder working at the intersection of law, software, and applied AI. I turn messy document and review workflows into reliable products, automations, and developer tools—from NER and RAG pipelines to small utilities that make PDFs, CSVs, browsers, and local files easier to work with.</p>
+          </section>
 
-      <h2>Tools I reach for</h2>
-      <div class="tools-grid">
-        <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/126759922?v=4" alt="" width="20" height="20" /> Cursor</span>
-        <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" width="20" height="20" /> Claude Code</span>
-        <span class="tool-chip"><span class="tool-icon">🤖</span> Hermes Agent</span>
-        <span class="tool-chip"><span class="tool-icon">🐕</span> Cerberus skill</span>
-        <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/1811962?v=4" alt="" width="20" height="20" /> Lovable</span>
-        <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/983194?v=4" alt="" width="20" height="20" /> Replit</span>
-        <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" width="20" height="20" /> OpenAI Codex</span>
-        <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/252820863?v=4" alt="" width="20" height="20" /> OpenClaw</span>
-        <span class="tool-chip"><img class="tool-logo" src="https://avatars.githubusercontent.com/u/208539476?v=4" alt="" width="20" height="20" /> OpenCode</span>
+          <section class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="job">
+              <div class="job-head"><h3 class="job-title">Senior Legal Engineer</h3><span class="date">Oct 2019 – present</span></div>
+              <div class="org">xMentium, Inc. · Orlando, FL</div>
+              <ul>
+                <li>Owned product vision and roadmap for an AI-powered contract-lifecycle platform, taking features from concept through pilot and production.</li>
+                <li>Built dozens of LLM-driven automations that reduced manual clause drafting and review for enterprise accounts.</li>
+                <li>Shipped NER and document-metadata workflows that improve search and retrieval-augmented generation (RAG).</li>
+                <li>Partnered with Sales on proof-of-value pilots and built customer-success programs including office hours, video, and in-app guidance.</li>
+                <li>Introduced GitHub for automation source control and mentored junior legal engineers.</li>
+                <li>Track AI news, trends, and tooling to help prioritize practical adoption of structured prompting, Skills, MCPs, and CLIs.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Selected public work</h2>
+            <p class="note">Open-source utilities and experiments. Each link goes to the current public repository.</p>
+            <div class="projects">
+              <article class="project"><h3><a href="https://github.com/sethsaler/dedupe">dedupe</a></h3><p>Local Gemini-style finder for duplicate images, videos, and GIFs, with a review-oriented workflow.</p><span class="stack">Python · media tooling</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/file-organization">file-organization</a></h3><p>Collision-safe file organization with extension-based routing and a macOS launcher for repeatable cleanup.</p><span class="stack">Python · shell · macOS</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/redactor">redactor</a></h3><p>Privacy-focused desktop redaction for PDFs, CSVs, and Excel files.</p><span class="stack">Python · Tkinter · PyMuPDF</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/docx_redline">docx_redline</a></h3><p>Compare two Word files on macOS and produce tracked changes plus a change report.</p><span class="stack">Python · AppleScript</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/loan-visualizer">loan-visualizer</a> <span aria-label="live demo">· <a href="https://sethsaler.github.io/loan-visualizer/">live demo</a></span></h3><p>Turns loan and amortization CSVs into interactive charts for exploring repayment scenarios.</p><span class="stack">TypeScript · React · Chart.js</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/converter">converter</a></h3><p>Polished macOS media converter with drag-and-drop input and smart format guessing.</p><span class="stack">Python · macOS</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/diffchecker">diffchecker</a></h3><p>Desktop CSV comparison with highlighted differences and CSV/Excel export.</p><span class="stack">Python · PyQt</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/signature-collector">signature-collector</a></h3><p>Combines OCR and heuristics to assemble signed documents into a single packet PDF.</p><span class="stack">Python · OCR · PDF</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/word-cloud">word-cloud</a></h3><p>Small text-visualization experiment for turning word frequency into a readable visual summary.</p><span class="stack">Python · text analysis</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/updater">updater</a></h3><p>Discovers CLIs on disk and runs the appropriate package-manager updates through one workflow.</p><span class="stack">Python · shell · Homebrew · npm</span></article>
+              <article class="project"><h3><a href="https://github.com/sethsaler/opencode-setup">opencode-setup</a></h3><p>One-click setup for a Ghostty and OpenCode development environment using a DeepSeek V4-Flash model.</p><span class="stack">Shell · developer tooling</span></article>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section class="section">
+            <h2 class="section-title">Core strengths</h2>
+            <div class="skill-group"><h3>Applied AI</h3><p>LLM workflows, RAG, NER, structured JSON, evaluation, prompt design</p></div>
+            <div class="skill-group"><h3>Product engineering</h3><p>Roadmaps, prototypes, pilots, customer enablement, automation</p></div>
+            <div class="skill-group"><h3>Developer tooling</h3><p>Python, JavaScript, TypeScript, shell, Chrome extensions, macOS</p></div>
+            <div class="skill-group"><h3>Legal technology</h3><p>Contract lifecycle, clause libraries, precedent retrieval, document review</p></div>
+          </section>
+          <section class="section">
+            <h2 class="section-title">Education</h2>
+            <ul class="side-list">
+              <li><strong>J.D.</strong>Indiana University Maurer School of Law · 2019</li>
+              <li><strong>B.A., Economics &amp; Political Science</strong>Furman University · 2014</li>
+              <li><strong>Indiana bar</strong>Active and in good standing</li>
+            </ul>
+          </section>
+          <section class="section">
+            <h2 class="section-title">Elsewhere</h2>
+            <ul class="side-list">
+              <li><strong><a href="https://github.com/sethsaler">github.com/sethsaler</a></strong>All current public repositories</li>
+              <li><strong><a href="https://sethsaler.github.io/loan-visualizer/">Loan visualizer demo</a></strong>Interactive browser demo</li>
+              <li><strong><a href="https://sethsaler.github.io/resume/">sethsaler.github.io/resume</a></strong>This page</li>
+            </ul>
+          </section>
+        </aside>
       </div>
-      <p class="tools-caption">Prototyping, autonomous coding, low-boilerplate web apps, and one-off scripts &mdash; each handles a different mode of work.</p>
-
-      <h2>Micro-tool themes</h2>
-      <div class="themes">
-        <span class="theme-pill"><strong>Documents</strong> — redlines, extraction, OCR, signature packets</span>
-        <span class="theme-pill"><strong>Data wrangling</strong> — CSV diffing, folder organization, exports</span>
-        <span class="theme-pill"><strong>Browser glue</strong> — extensions, bookmark sync, download helpers</span>
-        <span class="theme-pill"><strong>Account hygiene</strong> — local-session cleanup when APIs aren't the answer</span>
-        <span class="theme-pill"><strong>Enterprise glue</strong> — integration scripts and runbooks for demos</span>
-      </div>
-
-      <h2>Projects</h2>
-      <div class="projects">
-
-        <div class="project-card">
-          <div>
-            <span class="project-name project-name--static">Cerberus</span>
-            <p class="project-desc">Cursor agent skill in active development: encodes how agents should review and sanity-check their own diffs so the same standards apply every run</p>
-          </div>
-          <div class="project-stack">Cursor · Skills · agents</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/bookmark-sync">bookmark-sync</a>
-            <p class="project-desc">Sync Chrome bookmarks to Atlas, Comet, Dia, etc., with ordering and merge modes</p>
-          </div>
-          <div class="project-stack">Python · Chrome Ext</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/converter">converter</a>
-            <p class="project-desc">Email-to-PDF GUI with one-line install</p>
-          </div>
-          <div class="project-stack">Python · Tkinter</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/coo-flags">coo-flags</a>
-            <p class="project-desc">X extension: region flags from "Connected via," optional hide-by-region</p>
-          </div>
-          <div class="project-stack">JS · Chrome Ext</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/diffchecker">diffchecker</a>
-            <p class="project-desc">Side-by-side CSV diff with highlighted rows and CSV/Excel export</p>
-          </div>
-          <div class="project-stack">Python · PyQt</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/docx_redline">docx_redline</a>
-            <p class="project-desc">Compare two Word files on macOS; get tracked changes and a change report</p>
-          </div>
-          <div class="project-stack">Python · AppleScript</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/downloader">downloader</a>
-            <p class="project-desc">Chrome extension: download media from Reddit, X, Instagram, Threads posts</p>
-          </div>
-          <div class="project-stack">JS · Chrome Ext</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/file-organization">file-organization</a>
-            <p class="project-desc">Collision-safe sort-into-extension-folders CLI with optional macOS launcher</p>
-          </div>
-          <div class="project-stack">Python · shell</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/loan-visualizer">loan-visualizer</a>
-            <p class="project-desc">Loan / amortization CSV → interactive charts <span class="project-badge">demo</span></p>
-          </div>
-          <div class="project-stack">React · Vite · Chart.js</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/medical-pdf-extractor">medical-pdf-extractor</a>
-            <p class="project-desc">Lab PDFs → structured time-series JSON via LLM + OCR fallback</p>
-          </div>
-          <div class="project-stack">Python · OpenAI · OCR</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/pdf-to-csv">pdf-to-csv</a>
-            <p class="project-desc">Folder of tagged PDFs → CSV or Excel via PyMuPDF (GUI + CLI)</p>
-          </div>
-          <div class="project-stack">Python · Tkinter · PyMuPDF</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/reddit-saved-cleanup">reddit-saved-cleanup</a>
-            <p class="project-desc">macOS AppleScript helpers to unsave / clear votes via local Chrome</p>
-          </div>
-          <div class="project-stack">AppleScript · Python</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/redactor">redactor</a>
-            <p class="project-desc">Privacy-focused document redactor with GUI for PDFs/CSVs/Excel</p>
-          </div>
-          <div class="project-stack">Python · Tkinter · PyMuPDF</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/signature-collector">signature-collector</a>
-            <p class="project-desc">OCR + heuristics → merged signature packet PDF (GUI + CLI)</p>
-          </div>
-          <div class="project-stack">Python · PDFtk</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/updater">updater</a>
-            <p class="project-desc">update-all-clis: discover CLIs on disk and run the right package-manager updates</p>
-          </div>
-          <div class="project-stack">Shell · Python · Homebrew · npm</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/x-bookmarks-cleanup">x-bookmarks-cleanup</a>
-            <p class="project-desc">Bulk-remove X bookmarks using local Chrome</p>
-          </div>
-          <div class="project-stack">Python · CDP</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <a class="project-name" href="https://github.com/sethsaler/x-mute-list">x-mute-list</a>
-            <p class="project-desc">Add X mute keywords via Chrome DevTools Protocol</p>
-          </div>
-          <div class="project-stack">Python · CDP</div>
-        </div>
-
-      </div>
-
-      <hr />
-
-      <h2>Professional experience</h2>
-      <div class="job">
-        <div class="job-header">
-          <span class="job-title">Senior Legal Engineer</span>
-          <span class="job-date">Oct 2019 &ndash; present</span>
-        </div>
-        <div class="job-org">xMentium, Inc. &mdash; Orlando, FL</div>
-        <ul>
-          <li>Stayed current on <strong>AI news and trends</strong> to help prioritize emerging paradigms (RAG, structured JSON prompting, Skills, MCPs, CLIs, and similar) early in the adoption cycle</li>
-          <li>Developing <strong>Cerberus</strong>, a Cursor <strong>agent skill</strong> for repeatable agent-side review and guardrails on generated code (in active iteration)</li>
-          <li>Shipped <strong>NER and automation workflows</strong> that enrich document metadata for search and RAG</li>
-          <li>Owned <strong>product vision and roadmap</strong> for an AI-powered contract-lifecycle platform; features in pilot and production</li>
-          <li>Built <strong>dozens of LLM-driven automations</strong> that reduced manual clause drafting and review for enterprise accounts</li>
-          <li>Partnered with <strong>Sales</strong> on pilots and proof-of-value with major customers; built <strong>customer success</strong> motion (office hours, video, in-app guidance)</li>
-          <li>Introduced <strong>GitHub</strong> for automation source control and mentored junior legal engineers</li>
-          <li>Created <strong>clause libraries</strong> and precedent databases for fast retrieval and reuse</li>
-        </ul>
-      </div>
-
-      <h2>Education &amp; credentials</h2>
-      <ul class="edu-list">
-        <li><strong>J.D.</strong>, Indiana University Maurer School of Law, 2019</li>
-        <li><strong>B.A.</strong>, Economics &amp; Political Science, Furman University, 2014</li>
-        <li><strong>Indiana bar</strong>, active and in good standing</li>
-      </ul>
-
-      <footer>
-        <a href="https://www.linkedin.com/in/sethsaler">LinkedIn</a>
-        <a href="mailto:sethsaler@gmail.com">Email</a>
-        <a href="https://github.com/sethsaler">GitHub</a>
-        <a href="https://github.com/sethsaler/resume">View source</a>
-      </footer>
-
-    </div>
+      <footer>Last updated July 2026 · <a href="https://github.com/sethsaler/resume">View source on GitHub</a></footer>
+    </article>
   </body>
 </html>
