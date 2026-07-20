@@ -13,7 +13,6 @@ Published site: **[sethsaler.github.io/resume](https://sethsaler.github.io/resum
 | [diffchecker](https://github.com/sethsaler/diffchecker) | A desktop CSV diff tool with highlighted rows and CSV/Excel export | Python · PyQt |
 | [docx_redline](https://github.com/sethsaler/docx_redline) | Compares two Word files on macOS and produces tracked changes and a change report | Python · AppleScript |
 | [file-organization](https://github.com/sethsaler/file-organization) | A collision-safe CLI for sorting files into extension folders, with a macOS launcher | Python · shell |
-| [loan-visualizer](https://github.com/sethsaler/loan-visualizer) | Converts loan and amortization CSVs into interactive charts · **[live demo](https://sethsaler.github.io/loan-visualizer/)** | TypeScript · React · Chart.js |
 | [opencode-setup](https://github.com/sethsaler/opencode-setup) | Provides one-click setup for Ghostty and OpenCode with a DeepSeek V4-Flash model | Shell |
 | [redactor](https://github.com/sethsaler/redactor) | A privacy-focused document redactor for PDFs, CSVs, and Excel files | Python · Tkinter · PyMuPDF |
 | [signature-collector](https://github.com/sethsaler/signature-collector) | Uses OCR and heuristics to create a merged signature packet PDF | Python · OCR · PDF |
